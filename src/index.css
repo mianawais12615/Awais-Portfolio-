@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-headline: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  --color-surface: #0c0e11;
+  --color-surface-container-low: #111417;
+  --color-surface-container-high: #1d2024;
+  --color-surface-container-highest: #23262a;
+  --color-primary: #81e9ff;
+  --color-primary-container: #00e0ff;
+  --color-on-surface-variant: #aaabaf;
+  --color-on-surface: #f9f9fd;
+  --color-outline-variant: #46484b;
+
+  --radius-md: 0.375rem;
+
+  --pattern-dot: radial-gradient(circle, #81e9ff15 1px, transparent 1px);
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-on-surface-variant font-body antialiased;
+    background-image: var(--pattern-dot);
+    background-size: 32px 32px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline text-on-surface tracking-tight;
+  }
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #81e9ff 0%, #00e0ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-gradient {
+  background: linear-gradient(135deg, #81e9ff 0%, #00e0ff 100%);
+}
+
+.glass-nav {
+  background: rgba(12, 14, 17, 0.6);
+  backdrop-filter: blur(16px);
+}
